@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="41" failures="0" errors="0" time="4.131">
+  <testsuite name="populate_notification_subj_body-test-01" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.65" tests="3">
+    <testcase classname="populate_notification_subj_body-test-01 Call populateNotificationSubjAndBody with success" name="populate_notification_subj_body-test-01 Call populateNotificationSubjAndBody with success" time="0.004">
+    </testcase>
+    <testcase classname="populate_notification_subj_body-test-01 Call populateNotificationSubjAndBody for error handler" name="populate_notification_subj_body-test-01 Call populateNotificationSubjAndBody for error handler" time="0.03">
+    </testcase>
+    <testcase classname="populate_notification_subj_body-test-01 populate_notification_subj_body-test-02 Call populateNotificationSubjAndBody with success" name="populate_notification_subj_body-test-01 populate_notification_subj_body-test-02 Call populateNotificationSubjAndBody with success" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="postgre-sql-pool-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.702" tests="8">
+    <testcase classname="postgre-sql-pool-test should call connectToPostgresDB function with success" name="postgre-sql-pool-test should call connectToPostgresDB function with success" time="0.005">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call connectToPostgresDB function with success" name="postgre-sql-pool-test should call connectToPostgresDB function with success" time="0.006">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call getRequiredRefData function with success" name="postgre-sql-pool-test should call getRequiredRefData function with success" time="0.013">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call callback function with error" name="postgre-sql-pool-test should call callback function with error" time="0.001">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call getRequiredRefData function with error" name="postgre-sql-pool-test should call getRequiredRefData function with error" time="0.002">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call insertData function with success" name="postgre-sql-pool-test should call insertData function with success" time="0.002">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call insertData callback function with success" name="postgre-sql-pool-test should call insertData callback function with success" time="0.002">
+    </testcase>
+    <testcase classname="postgre-sql-pool-test should call insertData function with error" name="postgre-sql-pool-test should call insertData function with error" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="populate_additional_coldata-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.71" tests="4">
+    <testcase classname="populate_additional_coldata-test Call the populate additional coldata with success" name="populate_additional_coldata-test Call the populate additional coldata with success" time="0.007">
+    </testcase>
+    <testcase classname="populate_additional_coldata-test Call populate additional coldata with undefined val from db" name="populate_additional_coldata-test Call populate additional coldata with undefined val from db" time="0.023">
+    </testcase>
+    <testcase classname="populate_additional_coldata-test Call populate additional coldata with val from db error success" name="populate_additional_coldata-test Call populate additional coldata with val from db error success" time="0">
+    </testcase>
+    <testcase classname="populate_additional_coldata-test Call the populate additional coldata with refdata error" name="populate_additional_coldata-test Call the populate additional coldata with refdata error" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="get_requireddata_for_notification-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.625" tests="4">
+    <testcase classname="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with valid values success" name="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with valid values success" time="0.007">
+    </testcase>
+    <testcase classname="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with undefined val from db success" name="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with undefined val from db success" time="0.001">
+    </testcase>
+    <testcase classname="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with val from db error success" name="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with val from db error success" time="0">
+    </testcase>
+    <testcase classname="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with requiredEnvData as null success" name="get_requireddata_for_notification-test Call getRequiredDataForNotificationType with requiredEnvData as null success" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="process-sqs-message-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.76" tests="6">
+    <testcase classname="process-sqs-message-test Call the process SQS function with buildAdditionalColData with success" name="process-sqs-message-test Call the process SQS function with buildAdditionalColData with success" time="0.01">
+    </testcase>
+    <testcase classname="process-sqs-message-test Call the process SQS function with buildAdditionalColData data undefined" name="process-sqs-message-test Call the process SQS function with buildAdditionalColData data undefined" time="0.051">
+    </testcase>
+    <testcase classname="process-sqs-message-test Call the process SQS function with inserData failing" name="process-sqs-message-test Call the process SQS function with inserData failing" time="0.002">
+    </testcase>
+    <testcase classname="process-sqs-message-test Call the process SQS function with buildAdditionalColData error" name="process-sqs-message-test Call the process SQS function with buildAdditionalColData error" time="0.011">
+    </testcase>
+    <testcase classname="process-sqs-message-test Call the process SQS function with insertData callback returning error" name="process-sqs-message-test Call the process SQS function with insertData callback returning error" time="0.002">
+    </testcase>
+    <testcase classname="process-sqs-message-test Call the process SQS function with additional columns as empty" name="process-sqs-message-test Call the process SQS function with additional columns as empty" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="build_insert_quary-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="1.657" tests="2">
+    <testcase classname="build_insert_quary-test Call buildInsertQuary with valid values success" name="build_insert_quary-test Call buildInsertQuary with valid values success" time="0.006">
+    </testcase>
+    <testcase classname="build_insert_quary-test Call buildInsertQuary with columns as null success" name="build_insert_quary-test Call buildInsertQuary with columns as null success" time="0.033">
+    </testcase>
+  </testsuite>
+  <testsuite name="get_submsn_transid-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:27" time="0.169" tests="4">
+    <testcase classname="get_submsn_transid-test Call getSubmsnTransIdInfo with valid values success" name="get_submsn_transid-test Call getSubmsnTransIdInfo with valid values success" time="0.003">
+    </testcase>
+    <testcase classname="get_submsn_transid-test Call getSubmsnTransIdInfo with undefined val from db success" name="get_submsn_transid-test Call getSubmsnTransIdInfo with undefined val from db success" time="0">
+    </testcase>
+    <testcase classname="get_submsn_transid-test Call getSubmsnTransIdInfo with val from db error success" name="get_submsn_transid-test Call getSubmsnTransIdInfo with val from db error success" time="0.001">
+    </testcase>
+    <testcase classname="get_submsn_transid-test Call getSubmsnTransIdInfo with requiredEnvData as null success" name="get_submsn_transid-test Call getSubmsnTransIdInfo with requiredEnvData as null success" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="common-utils-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:27" time="0.138" tests="2">
+    <testcase classname="common-utils-test Call verifyLastCharInString without - at the end of the fileName" name="common-utils-test Call verifyLastCharInString without - at the end of the fileName" time="0.001">
+    </testcase>
+    <testcase classname="common-utils-test Call verifyLastCharInString with invalid params" name="common-utils-test Call verifyLastCharInString with invalid params" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="id-service-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:27" time="0.171" tests="3">
+    <testcase classname="id-service-test initialize module is loaded" name="id-service-test initialize module is loaded" time="0">
+    </testcase>
+    <testcase classname="id-service-test initialize reinitialization of the module returns the same" name="id-service-test initialize reinitialization of the module returns the same" time="0.001">
+    </testcase>
+    <testcase classname="id-service-test id generation will generate an id" name="id-service-test id generation will generate an id" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="process_notification_message-test" errors="0" failures="0" skipped="0" timestamp="2021-11-19T21:42:26" time="2.446" tests="5">
+    <testcase classname="process_notification_message-test 1. Call the process notification message with notification status Y" name="process_notification_message-test 1. Call the process notification message with notification status Y" time="0.004">
+    </testcase>
+    <testcase classname="process_notification_message-test 2. Call the process notification message with notification status Y and email response undefined" name="process_notification_message-test 2. Call the process notification message with notification status Y and email response undefined" time="0.021">
+    </testcase>
+    <testcase classname="process_notification_message-test 3. Call the process notification message with notification status N" name="process_notification_message-test 3. Call the process notification message with notification status N" time="0.001">
+    </testcase>
+    <testcase classname="process_notification_message-test 4. Call the process notification message with notification as undefined" name="process_notification_message-test 4. Call the process notification message with notification as undefined" time="0.001">
+    </testcase>
+    <testcase classname="process_notification_message-test 5. Call the process notification message with out email_alert_notification_type in Payload" name="process_notification_message-test 5. Call the process notification message with out email_alert_notification_type in Payload" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
