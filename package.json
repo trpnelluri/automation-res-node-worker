@@ -26,9 +26,12 @@
     "jest-extended": "^1.0.0",
     "jest-fetch-mock": "^3.0.3",
     "jest-junit": "^13.0.0",
+    "js2xmlparser": "^4.0.2",
     "moment": "^2.29.1",
     "node-cache": "^5.1.2",
     "nodemon": "^2.0.7",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "xml": "^1.0.1",
+    "xml2js": "^0.4.23"
   }
 }
