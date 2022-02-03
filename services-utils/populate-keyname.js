@@ -1,32 +1,32 @@
 'use strict'
 
-const separator = '_' 
-const fileNameStart = 'XDRAdapterDSResponse'
+const loggerUtils = require('../sharedLib/common/logger-utils');
+const separator = '_'
+const EventName = 'POPULATE_KEYNAME'
 
-async function populateKeyName(req) {
+async function populateKeyName(subUnid) {
+    let logParams = {globaltransid: subUnid}
+    const logger = loggerUtils.customLogger( EventName, logParams);
     
     return new Promise((resolve, reject) => {
-        try {
-
-            //const transId = req.headers.transaction_id
-            //const uniqueKey = req.headers.unique_key
-            const transId = 'DDP000000133939'
-            const uniqueKey ='SD091048T_1000711626185602255'
+            logger.info(`populateKeyName, subUnid: ${subUnid}` )
             const fileExtension = process.env.dleftfileextn
-            let uniqueKeyArray = uniqueKey.split('_');
-            const folderName = uniqueKeyArray[0]
-            const fileName = fileNameStart + separator + uniqueKey + separator + transId + separator + fileExtension
-            console.log(`populateKeyName, FileName: ${fileName}`)
+            const fileNameStart = process.env.dleftfilenamestart
+            let subUnidArray = subUnid.split('_');
+            
+            if ( subUnidArray.length <= 1 ) {
+                logger.error(`populateKeyName, ERROR: subUnid received is invalid: ${subUnid}` )
+                throw new Error('subUnid is invalid.');
+            }
+            const folderName = subUnidArray[0]
+            const fileName = fileNameStart + separator + subUnid + separator + fileExtension
             const finalKeyNameInS3 = `${folderName}/${fileName}`
-            console.log(`populateKeyName, finalKeyNameInS3: ${finalKeyNameInS3}`)
-
+            logger.info(`populateKeyName, FileName: ${fileName} finalKeyNameInS3: ${finalKeyNameInS3}` )
             resolve(finalKeyNameInS3)
 
-        } catch(err){
-            console.error(`err: ${err}`)
-            reject(err)
-        }
-    })
+    }).catch((error) => {
+        logger.error(`populateKeyName, ERROR: subUnid received is invalid: ${error}` )
+    });
 }
 
 module.exports = {
