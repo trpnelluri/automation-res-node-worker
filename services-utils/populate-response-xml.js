@@ -8,8 +8,8 @@ async function populateResponseXml(res, action, status, logger, subUnid, respons
         let xmlFile = '<?xml version="1.0" encoding="UTF-8"?>';
         if ( action === 'DELETE' && status === '1000' ) {
             xmlFile += '<Status>';
-            xmlFile += '<StatusCode>success</StatusCode>';
-            xmlFile += '<StatusSubject>success</StatusSubject>';
+            xmlFile += '<StatusCode>SUCCESS</StatusCode>';
+            xmlFile += '<StatusSubject>SUCCESS</StatusSubject>';
             xmlFile += '<StatusMessage>'+`Object with SUBMSNUNIQID ${subUnid} has been Successfully deleted from s3`+'</StatusMessage>';
             xmlFile += '</Status>';
             response = xmlFile
