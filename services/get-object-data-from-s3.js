@@ -3,14 +3,12 @@
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const loggerUtils = require('../sharedLib/common/logger-utils');
-const environment = process.env.environment
-const bucket = environment + '-' + process.env.bucketnamecommon;
-const EventName = 'XMLDATA_FROM_S3'
+const bucket = process.env.bucketname;
+const EventName = 'GET_XMLDATA_FROM_S3'
 
 exports.fetchXMLDataFromS3 = function (subUnid, objectKey, callback){
     let logParams = {globaltransid: subUnid}
     let logger = loggerUtils.customLogger( EventName, logParams);
-    //objectKey +=1 
     let strData = 'null'
     const params = {
         Bucket: bucket,

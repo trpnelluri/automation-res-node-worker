@@ -1,22 +1,34 @@
 'use strict'
 
-async function populateResponseXml(res, status, logger, subUnid, response) {
+async function populateResponseXml(res, action, status, logger, subUnid, response) {
 
-    logger.info(`populateResponseXml, status ${status} subUnid ${subUnid}`)
+    logger.info(`populateResponseXml, action ${action} status ${status} subUnid ${subUnid}`)
 
-    let xmlFile = '<?xml version="1.0" encoding="UTF-8"?>';
-    xmlFile += '<Status>';
-    xmlFile += '<StatusCode>ERROR</StatusCode>';
-    xmlFile += '<StatusSubject>ERROR</StatusSubject>';
-    if ( status === '1001') {
-        xmlFile += '<StatusMessage>Object Not Found</StatusMessage>';
-        xmlFile += '</Status>';
-        response = xmlFile;
-    } else if (status === '1002') {
-        xmlFile += '<StatusMessage>' + ` SUBMSNUNIQID ${subUnid} is Invalid` + '</StatusMessage>';
-        xmlFile += '</Status>';
-        response = xmlFile
+    if ( response === null ) {
+        let xmlFile = '<?xml version="1.0" encoding="UTF-8"?>';
+        if ( action === 'DELETE' && status === '1000' ) {
+            xmlFile += '<Status>';
+            xmlFile += '<StatusCode>success</StatusCode>';
+            xmlFile += '<StatusSubject>success</StatusSubject>';
+            xmlFile += '<StatusMessage>'+`Object with SUBMSNUNIQID ${subUnid} has been Successfully deleted from s3`+'</StatusMessage>';
+            xmlFile += '</Status>';
+            response = xmlFile
+        } else {
+            let statusMessage = 'null' 
+            xmlFile += '<Status>';
+            xmlFile += '<StatusCode>ERROR</StatusCode>';
+            xmlFile += '<StatusSubject>ERROR</StatusSubject>';
+            if ( status === '1001') {
+                statusMessage = `Object Not Found for SUBMSNUNIQID ${subUnid}`
+            } else if (status === '1002') {
+                statusMessage = `SUBMSNUNIQID ${subUnid} is Invalid`
+            }
+            xmlFile += '<StatusMessage>' + ` ${statusMessage} ` + '</StatusMessage>';
+            xmlFile += '</Status>';
+            response = xmlFile
+        }
     }
+   
     logger.info(`populateResponseXml, response ${response}`)
      res
         .contentType('application/xml')
