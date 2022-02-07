@@ -19,7 +19,7 @@ exports.default = async(req, res) => {
 };
 
 exports.getResponseXMLData = async (req, res) => {
-    logger.info(`getResponseXMLData, req.headers: ${JSON.stringify(req.headers)}`) 
+    logger.info(`getResponseXMLData, req.headers: ${JSON.stringify(req.headers)}`)
     const action = 'GET'
     let subUnid = '-'
     if ( req.headers.submsnuniqid !== undefined && req.headers.submsnuniqid !== '' && req.headers.submsnuniqid !== null) {
@@ -43,7 +43,7 @@ exports.getResponseXMLData = async (req, res) => {
 };
 
 exports.deleteObject = async(req, res) => {
-    logger.info(`deleteObject, req.headers: ${JSON.stringify(req.headers)}`) 
+    logger.info(`deleteObject, req.headers: ${JSON.stringify(req.headers)}`)
     const action = 'DELETE'
     let subUnid = '-'
     if ( req.headers.submsnuniqid !== undefined && req.headers.submsnuniqid !== '' && req.headers.submsnuniqid !== null) {
