@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get('/', controller.default);
 
-router.get('/get-response', controller.getResponse);
+router.get('/esmd/automation/get-object-response', controller.getResponseXMLData);
 
-router.delete('/delete-file', controller.deleteFile);
+router.delete('/esmd/automation/delete-object', controller.deleteObject);
 
 module.exports = router;
