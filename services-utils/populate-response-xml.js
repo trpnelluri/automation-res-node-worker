@@ -10,11 +10,11 @@ async function populateResponseXml(res, action, status, logger, subUnid, respons
             xmlFile += '<Status>';
             xmlFile += '<StatusCode>SUCCESS</StatusCode>';
             xmlFile += '<StatusSubject>SUCCESS</StatusSubject>';
-            xmlFile += '<StatusMessage>'+`Object with SUBMSNUNIQID ${subUnid} has been Successfully deleted from s3`+'</StatusMessage>';
+            xmlFile += '<StatusMessage>' + `Object with SUBMSNUNIQID ${subUnid} has been Successfully deleted from s3` + '</StatusMessage>';
             xmlFile += '</Status>';
             response = xmlFile
         } else {
-            let statusMessage = 'null' 
+            let statusMessage = 'null'
             xmlFile += '<Status>';
             xmlFile += '<StatusCode>ERROR</StatusCode>';
             xmlFile += '<StatusSubject>ERROR</StatusSubject>';
@@ -30,7 +30,7 @@ async function populateResponseXml(res, action, status, logger, subUnid, respons
     }
    
     logger.info(`populateResponseXml, response ${response}`)
-     res
+    res
         .contentType('application/xml')
         .send(response);
 }

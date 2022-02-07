@@ -18,7 +18,7 @@ exports.fetchXMLDataFromS3 = function (subUnid, objectKey, callback){
 
     s3.getObject(params, function (err, data) {
         if (err) {
-            logger.error("fetchXMLDataFromS3, getObject error occurred: " + JSON.stringify(err.stack));
+            logger.error('fetchXMLDataFromS3, getObject error occurred: ' + JSON.stringify(err.stack));
             callback('File Not Found', strData)
         } else {
             logger.debug('fetchXMLDataFromS3, Object retrevied successfully from s3')

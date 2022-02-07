@@ -41,14 +41,14 @@ exports.deleteObjFromS3 = function (subUnid, objectKey, callback){
 
     s3.headObject(deleteObjParams, function (err, metadata) {
         if (err) {
-            logger.error("deleteObjFromS3, objectExists : " + JSON.stringify(err.stack));
+            logger.error('deleteObjFromS3, objectExists : ' + JSON.stringify(err.stack));
             callback('File Not Found', objectDeleteFlag)
         } else {
 
             logger.debug(`deleteObjFromS3, Object is available in s3 for delete. data: ${JSON.stringify(metadata)}`)
             s3.deleteObject(deleteObjParams, function(err, dataDelete) {
                 if (err) {
-                    logger.error("deleteObjFromS3, Delete object error occurred: " + JSON.stringify(err.stack));
+                    logger.error('deleteObjFromS3, Delete object error occurred: ' + JSON.stringify(err.stack));
                     callback('File Not Found', objectDeleteFlag)
                 } else {
                     logger.info(`deleteObjFromS3, Object deleted successfully from s3. data: ${JSON.stringify(dataDelete)}`)
