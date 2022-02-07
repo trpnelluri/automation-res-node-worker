@@ -21,6 +21,9 @@ async function populateResponseXml(res, action, status, logger, subUnid, respons
             if ( status === '1001') {
                 statusMessage = `Object Not Found for SUBMSNUNIQID ${subUnid}`
             } else if (status === '1002') {
+                if (subUnid === '-') {
+                    subUnid = ''
+                }
                 statusMessage = `SUBMSNUNIQID ${subUnid} is Invalid`
             }
             xmlFile += '<StatusMessage>' + ` ${statusMessage} ` + '</StatusMessage>';
