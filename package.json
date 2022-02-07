@@ -4,10 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest --coverage --config ./jest.config.js",
-    "dev": "nodemon app.js dev",
-    "stg": "nodemon app.js stg",
-    "prod": "nodemon app.js prod"
+    "test": "jest --coverage --config ./jest.config.js"
   },
   "author": "Navya",
   "license": "ISC",
@@ -35,5 +32,11 @@
     "xml": "^1.0.1",
     "xml-parse-from-string": "^1.0.1",
     "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2"
   }
 }

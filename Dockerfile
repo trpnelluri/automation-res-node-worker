@@ -9,3 +9,5 @@ COPY . /opt/nodejs/automation_res_node_worker/
 RUN cd /opt/nodejs/automation_res_node_worker
 
 RUN npm install
+
+CMD [ "node", "app.js" ]
