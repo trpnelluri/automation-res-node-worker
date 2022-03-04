@@ -15,7 +15,7 @@ const logger = loggerUtils.customLogger(EventName, logParams);
 const app = express();
 app.use(xmlparser());
 app.use('/', require('./routes/route'));
-const port = process.env.port || 8093;
+const port = process.env.port || 8082;
 app.listen(port, () => {
-    logger.info(`app.listen, listining on port: ${port}`);
+    logger.info(`app.listen, listining on port: ${port} Release Version: ${process.env.releaseversion}`);
 });

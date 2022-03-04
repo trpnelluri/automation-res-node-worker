@@ -9,6 +9,6 @@ router.get('/', controller.default);
 
 router.get('/esmd/automation/get-object-response', controller.getResponseXMLData);
 
-router.delete('/esmd/automation/delete-object', controller.deleteObject);
+router.get('/esmd/automation/delete-object', controller.deleteObject);
 
 module.exports = router;
